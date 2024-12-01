@@ -2,7 +2,12 @@ from typing import List
 
 
 class Car:
-    def __init__(self, comfort_class: int, clean_mark: int, brand: str) -> None:
+    def __init__(
+        self,
+        comfort_class: int,
+        clean_mark: int,
+        brand: str
+    ) -> None:
         self.comfort_class: int = comfort_class
         self.clean_mark: int = clean_mark
         self.brand: str = brand
@@ -46,4 +51,7 @@ class CarWashStation:
     def rate_service(self, rating: int) -> None:
         total_rating = self.average_rating * self.count_of_ratings
         self.count_of_ratings += 1
-        self.average_rating = round((total_rating + rating) / self.count_of_ratings, 1)
+        self.average_rating = round(
+            (total_rating + rating) / self.count_of_ratings,
+            1,
+        )
